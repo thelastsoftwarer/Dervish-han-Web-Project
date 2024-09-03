@@ -1,0 +1,446 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #133523;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+.scrolled {
+    background-color: #5D4037;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu i {
+    font-size: 24px;
+}
+
+.logo img {
+    max-height: 50px; /* Logo boyutunu küçülttüm */
+    margin-left: 10px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    flex-direction: row;
+}
+
+.contact-info i {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.contact-info .phone-number {
+    color: #FFFFFF;
+    margin-right: 10px;
+}
+
+.contact-info .btn {
+    background: #5D4037;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.instagram-feed {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.hamburger-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
+.hamburger-menu.open {
+    transform: translateX(0);
+    display: flex;
+}
+
+.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.hamburger-menu li {
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.hamburger-menu li ul {
+    display: none;
+}
+
+.hamburger-menu li.active ul {
+    display: block;
+}
+
+.hamburger-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.content, .content-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    text-align: left;
+    background-color: #f8f8f8;
+    color: #004D4D;
+    flex-direction: row; /* Resim sol, yazı sağ */
+}
+
+.content-2, .content-4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    text-align: left;
+    background-color: #E8F5E9;
+    color: #004D4D;
+    flex-direction: row-reverse; /* Resim sağ, yazı sol */
+}
+
+.content img, .content-2 img, .content-3 img, .content-4 img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+}
+
+.text-container {
+    width: 50%;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.container .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.container .text-overlay {
+    text-align: right;
+}
+
+.text-container {
+    width: 50%;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.container .text-overlay .buttons {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.container .title-overlay {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.container .text-overlay {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.text-container {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.buttons a {
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button-contact {
+    background-color: #28A745;
+}
+
+.button-learn-more {
+    background-color: #007BFF;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #E0F7FA;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-card {
+    display: flex;
+    flex-direction: column; /* Resim ve yazıyı üst üste yerleştirme */
+    min-width: 400px;
+    max-width: 400px;
+    height: 500px; /* Sabit yükseklik */
+    margin: 0 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card img {
+    width: 100%;
+    height: 50%; /* Resim alanı yüksekliği */
+    object-fit: cover;
+}
+
+.carousel-card .text-container {
+    width: 100%;
+    padding: 20px;
+    height: 50%; /* Yazı alanı yüksekliği */
+    font-size: 1.1em;
+    color: #004D4D;
+    text-align: justify;
+    overflow-y: auto;
+}
+
+.carousel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.footer {
+    background-color: #004D4D;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.footer .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+.footer .social-icons a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 2em;
+}
+
+@media (max-width: 768px) {
+    /* İkinci video için özel düzenlemeler */
+    .container .text-overlay {
+        font-size: 0.9em; /* Yazı boyutunu küçült */
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5); /* Yazıların arka planını biraz daha şeffaf yap */
+        width: 90%; /* Yazı alanının genişliğini azalt */
+        margin-right: auto; /* Sağa yasla */
+        margin-left: auto; /* Sola yasla */
+        bottom: 5%; /* Alt boşluk artırılarak dikey olarak daha fazla alan ver */
+    }
+
+    .container .title-overlay {
+        font-size: 1.5em; /* Mobil için başlık boyutunu küçült */
+    }
+
+    .content, .content-3, .content-4, .content-5 {
+        flex-direction: column; /* Mobilde içerikleri dikey hizala */
+        padding: 20px;
+    }
+
+    .content-2 {
+        flex-direction: column-reverse; /* Mobilde resim ve yazı sıralamasını ters çevirme */
+        padding: 20px;
+    }
+
+    .content img, .content-2 img, .content-3 img, .content-4 img {
+        width: 100%; /* Mobilde resimler tam genişlikte olsun */
+    }
+
+    .text-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .carousel-card {
+        min-width: 100%;
+        margin: 0;
+        height: 400px; /* Mobilde daha küçük kart yüksekliği */
+    }
+
+    .carousel-card img {
+        height: 50%; /* Mobilde de resim ve yazı alanı yarı yarıya */
+    }
+
+    .carousel-card .text-container {
+        height: 50%;
+    }
+
+    .carousel-button {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .contact-info .phone-number {
+        margin-right: 5px;
+    }
+
+    .contact-info .btn {
+        margin-left: auto;
+    }
+}
